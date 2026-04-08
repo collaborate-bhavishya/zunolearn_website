@@ -31,7 +31,8 @@ a { text-decoration: none; color: inherit; }
 .container { width: min(1200px, 90%); margin: auto; }
 
 .section { padding: 5rem 0; }
-.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 3rem; color: var(--purple); }
+.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 1.5rem; color: var(--purple); }
+.section-subtitle { text-align: center; font-size: 1.25rem; color: var(--light-text); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
 .bg-light-blue { background-color: var(--bg-blue); }
 .bg-light-yellow { background-color: var(--bg-yellow); }
@@ -53,6 +54,10 @@ a { text-decoration: none; color: inherit; }
 @keyframes float-letter {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-15px) rotate(10deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(108, 92, 231, 0); }
 }
 
 .bounce { animation: bounce-slow 4s ease-in-out infinite; }
@@ -116,7 +121,7 @@ a { text-decoration: none; color: inherit; }
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 6rem 0;
+  padding: 5rem 0 6rem;
   z-index: 10;
 }
 .hero-grid {
@@ -126,16 +131,36 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
 }
 .hero-text h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   color: var(--purple);
   margin-bottom: 1rem;
+  line-height: 1.15;
 }
-.hero-text p {
-  font-size: 1.5rem;
+.hero-text .hero-what {
+  font-size: 1.35rem;
+  color: var(--dark-text);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.hero-text .hero-why {
+  font-size: 1.15rem;
   color: var(--light-text);
   margin-bottom: 2rem;
 }
 .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Beta Badge */
+.beta-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
 
 .hero-image-container { position: relative; }
 .hero-img {
@@ -170,7 +195,124 @@ a { text-decoration: none; color: inherit; }
 .c1 { top: 30%; right: 25%; font-size: 4rem; opacity: 0.4; animation: float 7s infinite 1s; }
 
 
-/* Hero Feature Showcase */
+/* ================================================
+   WHAT WE DO SECTION
+   ================================================ */
+.wwd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.wwd-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 3px solid transparent;
+}
+.wwd-card:hover {
+  border-color: var(--purple);
+}
+.wwd-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: transform 0.3s;
+}
+.wwd-card:hover .wwd-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+.wwd-card h3 {
+  font-size: 1.5rem;
+  color: var(--purple);
+  margin-bottom: 0.75rem;
+}
+.wwd-card p {
+  color: var(--light-text);
+  font-size: 1.05rem;
+}
+
+
+/* ================================================
+   WHO IT'S FOR SECTION
+   ================================================ */
+.wif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.wif-card {
+  padding: 2.5rem;
+  border: 3px solid transparent;
+  text-align: left;
+}
+.wif-card:hover {
+  border-color: var(--green);
+}
+.wif-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.wif-card h3 {
+  font-size: 1.6rem;
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+.wif-card p {
+  color: var(--light-text);
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+.wif-list {
+  list-style: none;
+}
+.wif-list li {
+  padding: 0.5rem 0;
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 1rem;
+}
+
+
+/* ================================================
+   PRODUCT PREVIEW SECTION
+   ================================================ */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+.preview-card {
+  overflow: hidden;
+  border: 3px solid transparent;
+  position: relative;
+}
+.preview-card:hover {
+  border-color: var(--yellow);
+}
+.preview-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 28px 28px 0 0;
+}
+.preview-label {
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+
+/* ================================================
+   HERO FEATURE SHOWCASE
+   ================================================ */
 .feature-showcase {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -206,81 +348,10 @@ a { text-decoration: none; color: inherit; }
   transform: translateX(10px);
 }
 
-/* Activities Section */
-.horizontal-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem 0 3rem;
-  scrollbar-width: none; /* Firefox */
-}
-.horizontal-scroll::-webkit-scrollbar { display: none; }
-.activity-card {
-  min-width: 300px;
-  flex: 0 0 300px;
-  overflow: hidden;
-  border: 4px solid white;
-}
-.activity-card:hover { border-color: var(--yellow); border-radius: 32px; }
-.activity-img {
-  height: 180px;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 28px 28px 0 0;
-}
-.activity-content { padding: 1.5rem; position: relative; }
-.age-tag {
-  background: var(--bg-color);
-  color: var(--light-text);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-.activity-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-.btn-play {
-  background: var(--green);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  font-weight: 700;
-  font-family: 'Baloo 2', cursive;
-  cursor: pointer;
-  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-.btn-play:hover { transform: scale(1.05); }
 
-/* Character Section */
-.character-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-}
-.character-card {
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 3px solid transparent;
-}
-.character-card:hover { border-color: var(--purple); }
-.char-image {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.character-card h3 { font-size: 2rem; color: var(--purple); margin-bottom: 0.5rem; }
-
-/* Trust Section */
+/* ================================================
+   TRUST SECTION
+   ================================================ */
 .trust-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -324,13 +395,67 @@ a { text-decoration: none; color: inherit; }
 .avatar { width: 50px; height: 50px; background: var(--bg-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
 .parent-name span { font-weight: 700; color: var(--light-text); }
 
-/* CTA Section */
+
+/* ================================================
+   ABOUT SECTION
+   ================================================ */
+.about-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-lead {
+  font-size: 1.35rem;
+  color: var(--dark-text);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.about-vision {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.about-badge {
+  display: inline-block;
+  background: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  color: var(--dark-text);
+}
+.about-emoji-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+.about-emoji {
+  font-size: 5rem;
+  display: block;
+  background: white;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+
+/* ================================================
+   CTA SECTION
+   ================================================ */
 .cta { text-align: center; border-radius: 40px; margin: 0 5% 5rem; padding: 4rem 1rem; }
 .cta h2 { font-size: 3.5rem; margin-bottom: 1rem; }
 .cta p { font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.9; }
 .cta-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
-/* Footer */
+
+/* ================================================
+   FOOTER
+   ================================================ */
 .footer { background: var(--dark-text); color: white; padding: 5rem 0 2rem; }
 .footer-grid {
   display: grid;
@@ -345,7 +470,10 @@ a { text-decoration: none; color: inherit; }
 .footer a:hover { color: var(--yellow); }
 .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #718096; }
 
-/* Login Form Modal Start */
+
+/* ================================================
+   LOGIN MODAL
+   ================================================ */
 .login-link {
   font-weight: 800;
   font-size: 1.1rem;
@@ -431,19 +559,420 @@ a { text-decoration: none; color: inherit; }
   border-color: var(--purple);
 }
 
-/* Responsive Start */
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
 @media (max-width: 992px) {
-  .hero-grid, .trust-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-grid, .trust-grid, .about-content { grid-template-columns: 1fr; text-align: center; }
   .hero-buttons { justify-content: center; }
   .floating-letter, .floating-number { display: none; }
-  .hero-text h1 { font-size: 3.5rem; }
+  .hero-text h1 { font-size: 2.8rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .wwd-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+  .wif-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .preview-grid { grid-template-columns: repeat(3, 1fr); }
+  .feature-showcase { grid-template-columns: 1fr; }
+  .section-title { text-align: center !important; }
+  .about-text { text-align: center; }
 }
 
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .section { padding: 3rem 0; }
   .section-title, .cta h2 { font-size: 2.2rem; }
-  .hero-text h1 { font-size: 2.8rem; }
+  .hero-text h1 { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .preview-grid { grid-template-columns: repeat(2, 1fr); }
+  .wif-card { text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .preview-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+  .hero-text h1 { font-size: 1.9rem; }
+  .beta-badge { font-size: 0.8rem; }
+}
+
+
+/* ================================================
+   LEGAL PAGES (Privacy Policy & Terms of Service)
+   ================================================ */
+.legal-page {
+  background: var(--bg-color);
+}
+
+/* Legal Hero */
+.legal-hero {
+  background: linear-gradient(135deg, #6C5CE7 0%, #a29bfe 50%, #74b9ff 100%);
+  color: white;
+  padding: 8rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.legal-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.legal-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -20%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,217,61,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.legal-hero-terms {
+  background: linear-gradient(135deg, #2d3436 0%, #636e72 50%, #6C5CE7 100%);
+}
+.legal-hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.legal-hero h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 3.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.legal-hero-sub {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.92;
+  line-height: 1.7;
+}
+.legal-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+.legal-meta span {
+  background: rgba(255,255,255,0.12);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+}
+
+/* Table of Contents */
+.legal-toc {
+  padding: 3rem 0 0;
+}
+.toc-card {
+  max-width: 700px;
+  margin: -2.5rem auto 0;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 10;
+  border: 3px solid var(--bg-blue);
+}
+.toc-card h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.6rem;
+  color: var(--purple);
+  margin-bottom: 1.5rem;
+}
+.toc-list {
+  padding-left: 1.5rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+.toc-list li {
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+  break-inside: avoid;
+}
+.toc-list li a {
+  color: var(--dark-text);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.toc-list li a:hover {
+  color: var(--purple);
+}
+
+/* Legal Content */
+.legal-content {
+  padding: 3rem 0;
+}
+.legal-section {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  position: relative;
+  border-left: 5px solid var(--purple);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.legal-section:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.legal-section-icon {
+  position: absolute;
+  top: -18px;
+  left: 24px;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.legal-section h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.8rem;
+  color: var(--purple);
+  margin-bottom: 1.2rem;
+}
+.legal-section h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.3rem;
+  color: var(--dark-text);
+  margin: 1.5rem 0 0.75rem;
+}
+.legal-section p {
+  color: var(--light-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.legal-section ul,
+.legal-section ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.legal-section li {
+  color: var(--light-text);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+.legal-section li strong {
+  color: var(--dark-text);
+}
+
+/* Legal Highlight Boxes */
+.legal-highlight {
+  background: var(--bg-blue);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--blue);
+}
+.legal-highlight p,
+.legal-highlight strong {
+  color: var(--dark-text);
+}
+.highlight-green {
+  background: rgba(76, 212, 176, 0.1);
+  border-left-color: var(--green);
+}
+.highlight-orange {
+  background: rgba(255, 122, 89, 0.1);
+  border-left-color: var(--orange);
+}
+
+/* Do Not Collect List */
+.legal-do-not-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+.do-not-item {
+  background: rgba(255, 122, 89, 0.08);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 0.95rem;
+}
+
+/* Use Cases Grid */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.use-case-item {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.2s;
+}
+.use-case-item:hover {
+  transform: translateY(-3px);
+}
+.use-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.use-case-item strong {
+  display: block;
+  color: var(--dark-text);
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+.use-case-item p {
+  font-size: 0.92rem;
+  margin: 0;
+  color: var(--light-text);
+}
+
+/* Rights Grid */
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.right-item {
+  text-align: center;
+  background: var(--bg-color);
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.right-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+.right-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+.right-item h4 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.1rem;
+  color: var(--purple);
+  margin-bottom: 0.4rem;
+}
+.right-item p {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin: 0;
+}
+
+/* Contact Card */
+.contact-card {
+  padding: 2rem;
+  margin-top: 1.5rem;
+  border: 2px solid var(--bg-blue);
+}
+.contact-card:hover {
+  transform: none;
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.contact-row:last-child {
+  border-bottom: none;
+}
+.contact-label {
+  font-weight: 700;
+  color: var(--dark-text);
+  min-width: 180px;
+  font-size: 0.98rem;
+}
+
+/* Legal Links */
+.legal-link {
+  color: var(--purple) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.legal-link:hover {
+  color: var(--orange) !important;
+}
+
+/* Legal CTA */
+.legal-cta {
+  padding: 3rem 0 5rem;
+}
+
+/* Legal Page Responsive */
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 6rem 0 3rem;
+  }
+  .legal-hero h1 {
+    font-size: 2.5rem;
+  }
+  .legal-hero-sub {
+    font-size: 1.1rem;
+  }
+  .legal-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .toc-list {
+    columns: 1;
+  }
+  .toc-card {
+    margin-top: -1.5rem;
+    padding: 1.5rem;
+  }
+  .legal-section {
+    padding: 2rem 1.5rem;
+    margin: 0 auto 2rem;
+  }
+  .legal-section h2 {
+    font-size: 1.5rem;
+  }
+  .legal-do-not-list,
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+  .rights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .contact-label {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-hero h1 {
+    font-size: 2rem;
+  }
+  .rights-grid {
+    grid-template-columns: 1fr;
+  }
 }
