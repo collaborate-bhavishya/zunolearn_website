@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zuno | Learning Through Play</title>
-  <meta name="description" content="A playful preschool learning website inspired by Lingokids." />
+  <title>Zuno App | AI-Powered Learning for Kids</title>
+  <meta name="description" content="Zuno App – AI-powered learning app for kids ages 3–6. Speech detection, interactive games, and personalized learning." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
   <!-- Floating Background Elements -->
@@ -22,13 +22,12 @@
 
   <header class="navbar">
     <div class="container nav-content">
-      <a href="#" class="logo">Zuno</a>
+      <a href="#" class="logo">Zuno App</a>
       <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#skills">Skills</a>
-        <a href="#characters">Characters</a>
-        <a href="#parents">Parents</a>
-      </nav>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#who-its-for">Who It's For</a>
+        <a href="#preview">Preview</a>
+        <a href="#about">About</a>
       </nav>
       <div style="display: flex; align-items: center;">
         <a href="#" class="login-link" onclick="openLoginModal(event)">Login</a>
@@ -42,11 +41,13 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <h1>Learning Through Play</h1>
-          <p>Games, songs, and activities for curious kids</p>
+          <span class="beta-badge">🚀 Currently in beta with early users</span>
+          <h1>Zuno App – AI-Powered Learning for Kids (Ages 3–6)</h1>
+          <p class="hero-what">Zuno helps kids learn English and foundational skills through AI-powered speech and interactive games.</p>
+          <p class="hero-why">Turn screen time into learning time — with real-time feedback and playful AI.</p>
           <div class="hero-buttons">
             <a href="#download" class="btn btn-yellow">Download the App</a>
-            <a href="#skills" class="btn btn-outline">Explore Skills</a>
+            <a href="#what-we-do" class="btn btn-outline">Learn More</a>
           </div>
         </div>
         <div class="hero-image-container">
@@ -59,15 +60,99 @@
       </div>
     </section>
 
-    <!-- 2. HERO FEATURE SECTION -->
-    <section id="features" class="section">
+    <!-- 2. WHAT WE DO SECTION -->
+    <section id="what-we-do" class="section what-we-do">
+      <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-subtitle">Zuno App combines cutting-edge AI with playful design to build essential skills.</p>
+        <div class="wwd-grid">
+          <div class="card wwd-card">
+            <div class="wwd-icon" style="background: var(--bg-blue);">🎙️</div>
+            <h3>AI Speech Detection</h3>
+            <p>Real-time pronunciation feedback that gently guides kids to speak more confidently in English.</p>
+          </div>
+          <div class="card wwd-card">
+            <div class="wwd-icon" style="background: var(--bg-yellow);">🎮</div>
+            <h3>Learning Games</h3>
+            <p>Interactive English, math, and logic games designed for curious young minds aged 3–6.</p>
+          </div>
+          <div class="card wwd-card">
+            <div class="wwd-icon" style="background: rgba(76, 212, 176, 0.15);">🧠</div>
+            <h3>Personalized Learning</h3>
+            <p>Adapts to each child's pace — so every kid learns at the speed that's right for them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHO IT'S FOR SECTION -->
+    <section id="who-its-for" class="section who-its-for bg-light-blue">
+      <div class="container">
+        <h2 class="section-title">Who It's For</h2>
+        <div class="wif-grid">
+          <div class="card wif-card">
+            <div class="wif-emoji">👨‍👩‍👧</div>
+            <h3>Parents of Kids Aged 3–6</h3>
+            <p>If you're looking for a safe, ad-free screen-time alternative that actually teaches — Zuno App is built for you. Track your child's progress and watch them grow.</p>
+            <ul class="wif-list">
+              <li>✅ 100% ad-free experience</li>
+              <li>✅ Progress tracking dashboard</li>
+              <li>✅ Safe, kid-friendly content</li>
+            </ul>
+          </div>
+          <div class="card wif-card">
+            <div class="wif-emoji">🧒</div>
+            <h3>Early Learners</h3>
+            <p>Kids beginning their journey with English, math, and critical thinking. Zuno App makes foundational learning feel like play.</p>
+            <ul class="wif-list">
+              <li>✅ English speaking & phonics</li>
+              <li>✅ Math & logical thinking</li>
+              <li>✅ Art & creativity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PRODUCT PREVIEW SECTION -->
+    <section id="preview" class="section product-preview">
+      <div class="container">
+        <h2 class="section-title">See Zuno App in Action</h2>
+        <p class="section-subtitle">Interactive games, AI-powered speech practice, and colorful learning — all in one app.</p>
+        <div class="preview-grid">
+          <div class="preview-card card">
+            <img src="assets/skill_speaking.png" alt="AI Voice Assistant game" class="preview-img" />
+            <div class="preview-label">🎙️ AI Speech Practice</div>
+          </div>
+          <div class="preview-card card">
+            <img src="assets/skill_english.png" alt="English Phonics & Reading" class="preview-img" />
+            <div class="preview-label">📖 Phonics & Reading</div>
+          </div>
+          <div class="preview-card card">
+            <img src="assets/skill_math.png" alt="Math Games" class="preview-img" />
+            <div class="preview-label">🔢 Math Games</div>
+          </div>
+          <div class="preview-card card">
+            <img src="assets/skill_logic.png" alt="Logic & Puzzles" class="preview-img" />
+            <div class="preview-label">🧩 Logic & Puzzles</div>
+          </div>
+          <div class="preview-card card">
+            <img src="assets/skill_art.png" alt="Art & Creativity" class="preview-img" />
+            <div class="preview-label">🎨 Art & Creativity</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HERO FEATURE SECTION (AI Speaking Game) -->
+    <section id="features" class="section bg-light-yellow">
       <div class="container">
         <div class="feature-showcase">
           <div class="feature-showcase-text">
             <span class="badge-label">⭐ Our Superstar Feature</span>
             <h2 style="text-align: left; margin: 1rem 0; font-size: 3.5rem; color: var(--purple);">AI-Powered Speaking Game</h2>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--light-text);">
-              Transform screen time into conversation time. Zuno uses advanced, kid-friendly AI to listen, encourage, and guide your child's English pronunciation and sentence building.
+              Transform screen time into conversation time. Zuno App uses advanced, kid-friendly AI to listen, encourage, and guide your child's English pronunciation and sentence building.
             </p>
             <ul class="feature-list">
               <li style="border-left-color: var(--blue);">🎙️ <strong>Smart Voice Recognition:</strong> Real-time, friendly feedback on pronunciation.</li>
@@ -91,90 +176,12 @@
       </div>
     </section>
 
-    <!-- 3. SKILLS SECTION -->
-    <section id="skills" class="activities section bg-light-blue">
-      <div class="container">
-        <h2 class="section-title">Build Essential Skills</h2>
-        <div class="horizontal-scroll">
-          <div class="card activity-card">
-            <img src="assets/skill_math.png" class="activity-img" alt="Math" />
-            <div class="activity-content">
-              <span class="age-tag">Numbers & Shapes</span>
-              <h3>Math</h3>
-              <p style="color: var(--light-text); margin-bottom: 1rem;">Counting, tracing, and basic operations.</p>
-              <button class="btn-play">▶ Play</button>
-            </div>
-          </div>
-          <div class="card activity-card">
-            <img src="assets/skill_english.png" class="activity-img" alt="Phonics & Reading" />
-            <div class="activity-content">
-              <span class="age-tag">Phonics & Reading</span>
-              <h3>English</h3>
-              <p style="color: var(--light-text); margin-bottom: 1rem;">ABC tracing, spelling, and vocabulary building.</p>
-              <button class="btn-play">▶ Play</button>
-            </div>
-          </div>
-          <div class="card activity-card">
-            <img src="assets/skill_art.png" class="activity-img" alt="Colors & Drawing" />
-            <div class="activity-content">
-              <span class="age-tag">Colors & Drawing</span>
-              <h3>Art & Creativity</h3>
-              <p style="color: var(--light-text); margin-bottom: 1rem;">Free-drawing, coloring books, and music.</p>
-              <button class="btn-play">▶ Play</button>
-            </div>
-          </div>
-          <div class="card activity-card">
-            <img src="assets/skill_logic.png" class="activity-img" alt="Puzzles & Memory" />
-            <div class="activity-content">
-              <span class="age-tag">Puzzles & Memory</span>
-              <h3>Logical Thinking</h3>
-              <p style="color: var(--light-text); margin-bottom: 1rem;">Matching, sequencing, and spatial reasoning.</p>
-              <button class="btn-play">▶ Play</button>
-            </div>
-          </div>
-          <div class="card activity-card">
-            <img src="assets/skill_speaking.png" class="activity-img" alt="AI Voice Assistant" />
-            <div class="activity-content">
-              <span class="age-tag">AI Voice Assistant</span>
-              <h3>English Speaking</h3>
-              <p style="color: var(--light-text); margin-bottom: 1rem;">Listen and repeat, confidence building.</p>
-              <button class="btn-play">▶ Play</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CHARACTER SECTION -->
-    <section id="characters" class="characters section">
-      <div class="container">
-        <h2 class="section-title">Meet Our Friends</h2>
-        <div class="character-grid">
-          <div class="card character-card">
-            <div class="char-image bounce" style="background:var(--blue);">🐧</div>
-            <h3>Pippa</h3>
-            <p>A curious penguin who loves solving puzzles and asking questions.</p>
-          </div>
-          <div class="card character-card">
-            <div class="char-image bounce-alt" style="background:var(--orange);">🦊</div>
-            <h3>Finn</h3>
-            <p>An energetic fox who enjoys exploring nature and learning new words.</p>
-          </div>
-          <div class="card character-card">
-            <div class="char-image bounce" style="background:var(--green);">🐸</div>
-            <h3>Barnaby</h3>
-            <p>A friendly frog with a talent for singing and counting lily pads.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. TRUST SECTION -->
-    <section id="parents" class="trust section bg-light-yellow">
+    <!-- 6. TRUST SECTION -->
+    <section id="parents" class="trust section">
       <div class="container">
         <div class="trust-grid">
           <div class="trust-info">
-            <h2 class="section-title" style="text-align:left;">Why Parents Love Zuno</h2>
+            <h2 class="section-title" style="text-align:left;">Why Parents Love Zuno App</h2>
             <div class="trust-badges">
               <div class="badge">
                 <span class="icon">🛡️</span>
@@ -182,15 +189,15 @@
                 <p>100% ad-free learning environment</p>
               </div>
               <div class="badge">
-                <span class="icon">🏆</span>
-                <strong>1,000+ Activities</strong>
-                <p>Curriculum-approved content</p>
+                <span class="icon">🤖</span>
+                <strong>AI-Powered</strong>
+                <p>Real-time speech feedback and adaptive learning</p>
               </div>
             </div>
           </div>
           <div class="trust-testimonial">
             <div class="card testimonial-card">
-              <p>"Zuno has transformed screen time into active learning. My 4-year-old loves the games and I love seeing the progress!"</p>
+              <p>"Zuno App has transformed screen time into active learning. My 4-year-old loves the games and I love seeing the progress!"</p>
               <div class="parent-name">
                 <div class="avatar">👩</div>
                 <span>Sarah M., Parent</span>
@@ -201,11 +208,33 @@
       </div>
     </section>
 
-    <!-- 6. CALL TO ACTION -->
+    <!-- 7. ABOUT / COMPANY SECTION -->
+    <section id="about" class="section about-section bg-light-blue">
+      <div class="container about-content">
+        <div class="about-text">
+          <h2 class="section-title" style="text-align: left;">About Zuno App</h2>
+          <p class="about-lead">We're building Zuno App because every child deserves a fun, safe, and effective way to learn — regardless of where they grow up.</p>
+          <p class="about-vision">Our vision is to become the most trusted AI-powered learning companion for young kids worldwide. We believe that the right technology, built with care, can transform early childhood education.</p>
+          <div class="about-badge">
+            <span>🇮🇳 Built in India</span>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-emoji-grid">
+            <span class="about-emoji bounce">📚</span>
+            <span class="about-emoji bounce-alt">🎯</span>
+            <span class="about-emoji bounce">🌍</span>
+            <span class="about-emoji bounce-alt">❤️</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CALL TO ACTION -->
     <section id="download" class="cta section gradient-bg">
       <div class="container cta-content">
         <h2>Start Your Child's Learning Adventure</h2>
-        <p>Join millions of kids playing and learning in a safe environment.</p>
+        <p>Join parents who are turning screen time into learning time with Zuno App.</p>
         <div class="cta-buttons">
           <a href="#" class="btn btn-yellow btn-large">Start Free Trial</a>
           <a href="#" class="btn btn-white btn-large">Download App</a>
@@ -214,34 +243,31 @@
     </section>
   </main>
 
-  <!-- 7. FOOTER -->
+  <!-- 9. FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo">Zuno</a>
-        <p>A colorful learning playground for curious kids.</p>
+        <a href="#" class="logo">Zuno App</a>
+        <p>AI-powered learning app for kids ages 3–6.</p>
       </div>
       <div>
-        <h4>Parents</h4>
-        <a href="why-zuno.html">Why Zuno?</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="help-center.html">Help Center</a>
+        <h4>Product</h4>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#preview">Product Preview</a>
+        <a href="#features">AI Speaking Game</a>
       </div>
       <div>
-        <h4>Educators</h4>
-        <a href="schools.html">Schools</a>
-        <a href="teachers.html">Teachers</a>
-        <a href="curriculum.html">Curriculum</a>
+        <h4>Contact</h4>
+        <a href="mailto:hello@zunoapp.com">hello@zunoapp.com</a>
       </div>
       <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="careers.html">Careers</a>
+        <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Zuno Learning Inc. All rights reserved.</p>
+      <p>🇮🇳 Built in India &nbsp;|&nbsp; &copy; 2026 Zuno App. All rights reserved.</p>
     </div>
   </footer>
 
@@ -274,7 +300,6 @@
     function closeLoginModal() {
       modal.classList.remove("show");
     }
-    // Close when clicking outside of the modal
     window.onclick = function(event) {
       if (event.target === modal) {
         closeLoginModal();
