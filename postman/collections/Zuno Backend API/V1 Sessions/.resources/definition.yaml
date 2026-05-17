@@ -1,0 +1,3 @@
+$kind: collection
+description: V1 session completion. Requires X-Child-ID (UUID).
+order: 4000

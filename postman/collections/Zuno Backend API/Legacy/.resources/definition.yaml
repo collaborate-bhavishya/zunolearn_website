@@ -1,0 +1,3 @@
+$kind: collection
+description: Legacy endpoints (migration window). Require X-Child-ID header.
+order: 2000

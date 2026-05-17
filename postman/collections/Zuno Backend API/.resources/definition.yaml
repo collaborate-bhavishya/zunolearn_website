@@ -1,0 +1,13 @@
+$kind: collection
+description: >-
+  All API endpoints for the Zuno backend (legacy + v1).
+
+
+  **Auth:** Child-scoped endpoints require `X-Child-ID` header (UUID).
+  Parent/auth endpoints expect `Authorization: Bearer <token>` when auth
+  middleware is enabled.
+variables:
+  baseUrl: http://localhost:3000
+  accessToken: ""
+  childId: a0000001-0001-4001-8001-000000000001
+  transactionId: d0000001-0001-4001-8001-000000000001

@@ -1,0 +1,8 @@
+$kind: http-request
+description: GET /progress/:childId - Returns progress snapshot for child.
+  X-Child-ID must match path.
+url: "{{baseUrl}}/progress/{{childId}}"
+method: GET
+headers:
+  X-Child-ID: "{{childId}}"
+order: 1000

@@ -1,0 +1,12 @@
+# Use this workspace to collaborate
+workspace:
+  id: 662e2b4a-64d4-4c7d-8fac-5f99d467c79b
+cloudResources:
+  collections:
+    ../postman/collections/Zuno Backend API: 6c84b076-1481-475e-a0bb-b4d606914672
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

@@ -1,0 +1,17 @@
+$kind: http-request
+description: PATCH /v1/notifications/preferences - Update preferences. Requires auth.
+url: "{{baseUrl}}/v1/notifications/preferences"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{accessToken}}
+body:
+  type: text
+  content: |-
+    {
+      "pushEnabled": true,
+      "emailEnabled": false,
+      "streakReminderTime": "19:30",
+      "marketingOptIn": false
+    }
+order: 3000

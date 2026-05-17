@@ -1,0 +1,5 @@
+$kind: http-request
+description: GET /v1/payments/status/:transactionId - Get transaction status.
+url: "{{baseUrl}}/v1/payments/status/{{transactionId}}"
+method: GET
+order: 2000

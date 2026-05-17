@@ -1,0 +1,26 @@
+$kind: http-request
+description: "POST /v1/progress/next-playable - Get next recommended playable.
+  strategy: rule_based | llm | hybrid."
+url: "{{baseUrl}}/v1/progress/next-playable"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: X-Child-ID
+    value: "{{childId}}"
+  - key: Authorization
+    value: Bearer {{accessToken}}
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+      "childId": "{{childId}}",
+      "strategy": "rule_based",
+      "context": {
+        "lastPlayableId": "p_001",
+        "streakCount": 4,
+        "recentThemes": ["jungle", "forest"]
+      }
+    }
+order: 2000

@@ -1,0 +1,6 @@
+$kind: http-request
+description: GET /v1/app-config - Min version, force update, store URLs, feature
+  flags. No auth.
+url: "{{baseUrl}}/v1/app-config"
+method: GET
+order: 1000

@@ -1,0 +1,21 @@
+$kind: http-request
+description: "POST /v1/notifications/device-token - Register push token.
+  platform: ios | android."
+url: "{{baseUrl}}/v1/notifications/device-token"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Authorization
+    value: Bearer {{accessToken}}
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+      "childId": "{{childId}}",
+      "platform": "android",
+      "token": "push_token_string",
+      "appVersion": "1.0.0"
+    }
+order: 1000

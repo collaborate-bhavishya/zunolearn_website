@@ -1,0 +1,21 @@
+$kind: http-request
+description: POST /sessions/complete - Complete a game/session. Returns snapshot.
+url: "{{baseUrl}}/sessions/complete"
+method: POST
+headers:
+  Content-Type: application/json
+  X-Child-ID: "{{childId}}"
+body:
+  type: text
+  content: |-
+    {
+      "sessionId": "uuid-or-client-id",
+      "playableId": "p_001",
+      "themeId": "jungle",
+      "stars": 3,
+      "attempts": 1,
+      "duration": 30,
+      "deviceDate": "2026-03-10",
+      "isSpeaking": false
+    }
+order: 2000

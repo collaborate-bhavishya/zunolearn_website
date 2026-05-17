@@ -1,0 +1,3 @@
+$kind: collection
+description: V1 progress endpoints. Require X-Child-ID (UUID).
+order: 3000

@@ -1,0 +1,7 @@
+$kind: http-request
+description: GET /v1/notifications/preferences - Requires auth.
+url: "{{baseUrl}}/v1/notifications/preferences"
+method: GET
+headers:
+  Authorization: Bearer {{accessToken}}
+order: 2000

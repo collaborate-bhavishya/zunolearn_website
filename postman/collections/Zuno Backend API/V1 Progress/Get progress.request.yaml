@@ -1,0 +1,75 @@
+$kind: http-request
+description: |-
+  GET /v1/progress/:childId
+
+  Notes:
+  - Uses path param `childId`.
+  - Sends `Authorization: Bearer {{accessToken}}`.
+  - Also sends `X-Child-ID: {{childId}}` (kept since backend may require it).
+url: '{{baseUrl}}/v1/progress/{{childId}}'
+method: GET
+headers:
+  - key: Authorization
+    value: 'Bearer {{accessToken}}'
+  - key: X-Child-ID
+    value: '{{childId}}'
+order: 1000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      // Fail fast on server errors and print useful debugging info.
+      pm.test('No 5xx response', function () {
+        pm.expect(pm.response.code, 'HTTP status').to.not.be.within(500, 599);
+      });
+
+      if (pm.response.code >= 500) {
+        console.log('[Get progress] 5xx response body:', pm.response.text());
+      }
+
+      // Happy-path checks
+      if (pm.response.code === 200) {
+        pm.test('Response is JSON', function () {
+          pm.response.to.be.json;
+        });
+
+        const data = pm.response.json();
+
+        // "Schema-ish" checks based on known/likely fields.
+        pm.test('Response shape looks like progress snapshot', function () {
+          pm.expect(data).to.be.an('object');
+
+          // Some APIs wrap data; accept either a direct object or { data: {...} }
+          const payload = (data && typeof data === 'object' && data.data && typeof data.data === 'object')
+            ? data.data
+            : data;
+
+          // If backend returns an error shape even on 200, surface it.
+          if (payload && payload.error) {
+            pm.expect.fail('Received error object in 200 response: ' + JSON.stringify(payload.error));
+          }
+
+          // Optional fields: bestStars, totalStars, rewards
+          if (Object.prototype.hasOwnProperty.call(payload, 'bestStars')) {
+            pm.expect(payload.bestStars).to.be.a('number');
+          }
+          if (Object.prototype.hasOwnProperty.call(payload, 'totalStars')) {
+            pm.expect(payload.totalStars).to.be.a('number');
+          }
+          if (Object.prototype.hasOwnProperty.call(payload, 'rewards')) {
+            pm.expect(payload.rewards).to.satisfy(r => Array.isArray(r) || (r && typeof r === 'object'));
+          }
+        });
+      } else {
+        // Non-200s: still try to log error details if JSON.
+        pm.test('Non-200 responses include a message (when JSON)', function () {
+          const ct = pm.response.headers.get('Content-Type') || '';
+          if (ct.includes('application/json')) {
+            const body = pm.response.json();
+            const errMsg = body?.error?.message || body?.message;
+            if (errMsg) console.log('[Get progress] error message:', errMsg);
+            // Don’t hard-fail on message absence; just assert we received an object.
+            pm.expect(body).to.be.an('object');
+          }
+        });
+      }

@@ -1,0 +1,30 @@
+$kind: http-request
+description: POST /v1/analytics/events - Batch analytics events. timestamp
+  optional (ISO datetime).
+url: "{{baseUrl}}/v1/analytics/events"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Authorization
+    value: Bearer {{accessToken}}
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+      "events": [
+        {
+          "eventName": "playable_completed",
+          "childId": "{{childId}}",
+          "sessionId": "session-uuid",
+          "timestamp": "2026-03-10T12:00:00.000Z",
+          "properties": {
+            "playableId": "p_001",
+            "themeId": "jungle",
+            "stars": 3
+          }
+        }
+      ]
+    }
+order: 1000

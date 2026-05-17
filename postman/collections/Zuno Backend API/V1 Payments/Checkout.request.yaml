@@ -1,0 +1,19 @@
+$kind: http-request
+description: "POST /v1/payments/checkout - Create checkout. Requires auth.
+  provider: stripe | razorpay."
+url: "{{baseUrl}}/v1/payments/checkout"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{accessToken}}
+body:
+  type: text
+  content: |-
+    {
+      "planId": "plan_monthly",
+      "provider": "stripe",
+      "childId": "{{childId}}",
+      "successUrl": "app://payment/success",
+      "cancelUrl": "app://payment/cancel"
+    }
+order: 1000

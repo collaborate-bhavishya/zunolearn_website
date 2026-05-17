@@ -1,0 +1,27 @@
+$kind: http-request
+description: POST /v1/sessions/complete - Complete session. Returns {
+  alreadyCompleted, snapshot }.
+url: "{{baseUrl}}/v1/sessions/complete"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: X-Child-ID
+    value: "{{childId}}"
+  - key: Authorization
+    value: Bearer {{accessToken}}
+    disabled: true
+body:
+  type: text
+  content: |-
+    {
+      "sessionId": "uuid-or-client-id",
+      "playableId": "p_001",
+      "themeId": "jungle",
+      "stars": 3,
+      "attempts": 1,
+      "duration": 30,
+      "deviceDate": "2026-03-10",
+      "isSpeaking": false
+    }
+order: 1000

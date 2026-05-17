@@ -1,0 +1,7 @@
+$kind: http-request
+description: GET /v1/subscriptions/me - Current user subscription. Requires auth.
+url: "{{baseUrl}}/v1/subscriptions/me"
+method: GET
+headers:
+  Authorization: Bearer {{accessToken}}
+order: 1000
